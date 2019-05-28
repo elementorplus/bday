@@ -1,0 +1,115 @@
+---
+
+# This file is a YAML formatted file. YAML indenting is done in spaces not
+# tabs, and whitespace is significant. If you don't stick to this, it will
+# fail on provision
+
+# These are your website, and their names plugins/themes they're
+# located in. See the docs for how to define these, and what all the keys
+# and options are
+# Remember, whitespace is significant! Tabs and spaces mean different things
+app:
+
+  setup:
+    workflow: wp-cli
+    wordpress: *
+    env: false
+    shell: false
+    plugins: true
+    theme: true
+    child_theme: false
+    settings: true
+    extra: false
+    
+  env:
+    db_name: app_db_name
+    db_user: app_db_user
+    db_pass: app_db_pass
+    db_prefix: wp_
+    app_host: bday.elementor.plus
+
+  shell:
+    before_install:
+      - https://gist.githubusercontent.com/example.sh
+    after_install:
+      - https://gist.githubusercontent.com/example.sh
+
+  plugins:
+    bulks:
+      coming-soon: *
+    single:
+      - name: duplicate-post
+        package: wp-cli
+        ver: *
+        zip: ""
+      - name: elementor
+        package: wp-cli
+        ver: *
+        zip: ""
+
+  theme:
+    name: hello-elementor
+    rename: ""
+    package: wp-cli
+    ver: *
+    zip: false
+
+  child_theme:
+    generate_scaffold: false
+    name: elementor-child
+    package: wp-cli
+    ver: *
+    zip: false
+    
+  settings:
+    # Discussion
+    comment_moderation: 1
+    comment_registration: 1
+    default_comment_status: 0
+    default_pingback_flag: 0
+    default_ping_status: 0
+    # General
+    blogdescription: Bday Elementor
+    date_format: d/m/Y
+    time_format: H:i
+    timezone_string: Europe/London
+    start_of_week: 0
+    # Media
+    large_size_h: 0
+    large_size_w: 0
+    medium_size_h: 0
+    medium_size_w: 0
+    thumbnail_crop: 0
+    thumbnail_size_h: 375
+    thumbnail_size_w: 375
+    # Miscellaneous
+    convert_smilies: false
+    uploads_use_yearmonth_folders: 0
+    # Permalinks
+    permalink_structure: /%postname%/
+    # Privacy
+    blog_public: 0
+    # Reading
+    frontpage_name: Homepage
+    page_on_front: 4
+    show_on_front: page
+    # User
+    admin_email: info@elementor.plus
+    admin_password: password
+    admin_user: erp-admin
+    first_name: elementor
+    last_name: elementor
+    
+  extra:
+    elementor_pro_license: ""
+    wp_rocket_email: ""
+    wp_rocket_key: ""
+
+  config_templates:
+    workflow: default
+    env: default
+    plugins_single: default
+    theme: default
+    child_theme: default
+    settings: default
+    extra: default
