@@ -22,10 +22,6 @@ app:
     extra: false
     
   env:
-    db_name: app_db_name
-    db_user: app_db_user
-    db_pass: app_db_pass
-    db_prefix: wp_
     app_host: bday.elementor.plus
 
   shell:
