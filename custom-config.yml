@@ -18,7 +18,7 @@ app:
     plugins: true
     theme: true
     child_theme: false
-    settings: true
+    settings: false
     extra: false
     
   env:
