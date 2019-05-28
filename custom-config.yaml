@@ -11,7 +11,7 @@
 app:
 
   setup:
-    workflow: wp-cli
+    workflow: cdk-comp/bedrock
     wordpress: *
     env: false
     shell: false
