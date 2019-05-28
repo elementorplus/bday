@@ -42,6 +42,10 @@ app:
         package: wp-cli
         ver: *
         zip: ""
+      - name: wp-mail-smtp
+        package: wp-cli
+        ver: *
+        zip: ""
 
   theme:
     name: hello-elementor
